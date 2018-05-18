@@ -10,7 +10,14 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // url代理，将localhost:8080/api转换成https://cnodejs.org/api/v1
+    proxyTable: {
+      '/api': {
+        target: 'https://cnodejs.org/api/v1',
+        pathRewrite: {'^/api' : ''},
+        changeOrigin: true
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
