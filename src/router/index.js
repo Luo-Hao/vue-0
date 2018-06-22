@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Content from '@/components/content'
+import User from '@/components/user'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
@@ -22,6 +23,11 @@ export default new Router({
       path: 'footer',
       name: 'footer',
       component: Footer
+    },
+    {
+      path: '/user/:username',
+      name: 'user',
+      component: User
     }
   ]
 })
